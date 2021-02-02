@@ -105,6 +105,7 @@ export default function Form({ currentId, setCurrentId }) {
           size="large"
           type="submit"
           fullWidth
+          style={{ marginBottom: '10px' }}
         >
           {currentId ? 'Update' : 'New'} Post
         </Button>
