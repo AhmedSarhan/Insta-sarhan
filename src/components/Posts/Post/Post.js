@@ -42,7 +42,7 @@ export default function Post({ post, setCurrentId }) {
       <div className={classes.details}>
         <Typography variant="body2" color="textSecondary">
           {post.tags.map((tag) => {
-            return <span key={tag}>#{tag}</span>;
+            return <span key={tag}> #{tag} </span>;
           })}
         </Typography>
       </div>
