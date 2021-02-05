@@ -8,7 +8,6 @@ export default function Form({ currentId, setCurrentId }) {
   const classes = useStyles();
   const dispatch = useDispatch();
   const [postData, setPostData] = useState({
-    creator: '',
     title: '',
     message: '',
     tags: '',
@@ -17,6 +16,7 @@ export default function Form({ currentId, setCurrentId }) {
   const editedPost = useSelector((state) =>
     currentId ? state.posts.find((post) => post._id === currentId) : null
   );
+  const user = JSON.parse(localStorage.getItem('profile'));
   useEffect(() => {
     if (editedPost) {
       setPostData(editedPost);
@@ -27,14 +27,13 @@ export default function Form({ currentId, setCurrentId }) {
     if (currentId) {
       dispatch(editPost(currentId, postData));
     } else {
-      dispatch(createPost(postData));
+      dispatch(createPost({ ...postData, name: user?.result?.name }));
     }
     clear();
   };
   const clear = () => {
     setCurrentId(null);
     setPostData({
-      creator: '',
       title: '',
       message: '',
       tags: '',
@@ -51,16 +50,6 @@ export default function Form({ currentId, setCurrentId }) {
         onSubmit={handleSubmit}
       >
         <Typography variant="h6">{currentId ? 'Edit' : 'New'} Post</Typography>
-        <TextField
-          name="creator"
-          variant="outlined"
-          label="Creator"
-          fullWidth
-          value={postData.creator}
-          onChange={(e) =>
-            setPostData({ ...postData, creator: e.target.value })
-          }
-        />
         <TextField
           name="title"
           variant="outlined"
