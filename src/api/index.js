@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API = axios.create({ baseURL: 'https://insta-sarhan.herokuapp.com/ });
+const API = axios.create({ baseURL: 'https://insta-sarhan.herokuapp.com' });
 // const url = 'https://insta-sarhan.herokuapp.com/posts';
 
 API.interceptors.request.use((req) => {
