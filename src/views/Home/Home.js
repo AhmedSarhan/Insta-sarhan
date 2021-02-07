@@ -30,10 +30,10 @@ export default function Home() {
           container
           justify="space-between"
           alignItems="stretch"
-          spacing="3"
+          spacing="2"
           className={classes.mainContainer}
         >
-          <Grid item xs={12} sm={7}>
+          <Grid item xs={12} sm={8}>
             <Posts setCurrentId={setCurrentId} />
           </Grid>
           <Grid item xs={12} sm={4}>

@@ -41,12 +41,6 @@ export default function NavBar() {
         >
           InstaSarhan
         </Typography>
-        <img
-          src={connective}
-          className={classes.image}
-          alt="connective"
-          style={{ width: '80px', height: '80px' }}
-        />
       </div>
       <Toolbar className={classes.toolbar}>
         {user ? (
