@@ -15,6 +15,7 @@ export default makeStyles((theme) => ({
   heading: {
     color: '#6d1b7b',
     textDecoration: 'none',
+    fontSize: '2.6rem',
   },
   image: {
     marginLeft: '15px',
@@ -27,12 +28,18 @@ export default makeStyles((theme) => ({
   profile: {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '400px',
+    flexWrap: 'wrap',
+  },
+  account: {
+    display: 'flex',
+    justifyContent: 'space-between',
     flexWrap: 'wrap',
   },
   userName: {
     display: 'flex',
     alignItems: 'center',
+    marginLeft: '10px',
+    marginRight: '10px',
   },
   brandContainer: {
     display: 'flex',
